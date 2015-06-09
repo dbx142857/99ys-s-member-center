@@ -1,0 +1,95 @@
+/* CSS Document */
+/*画廊——艺术家右侧内容*/
+.artist_right{ float:right; padding-bottom:80px; overflow:hidden; width:715px; }
+.artist_up{ height:60px; padding-bottom:30px;}
+.artist_up img{ width:526px; height:60px; display:block; float:left; }
+.artist_up span{ float:right; line-height:60px; height:60px; padding:0 20px; background:#eee;}
+.artist_up span a{  font-size:24px; color:#656565;}
+.artist_con{ clear:both;}
+.artist_con .artist_type{ height:46px; line-height:46px; padding-left:10px; border-bottom:1px solid #000; }
+.artist_con .artist_type span{ margin-right:8px; color:#ccc; padding:0 15px; font-size:16px; border-top:1px solid #ccc; border-right:1px solid #ccc; border-left:1px solid #ccc; float:left;  }
+.artist_con .artist_type span.cur{ margin-right:8px; color:#000; padding:0 15px; font-size:16px; border-top:1px solid #000; border-right:1px solid #000; border-left:1px solid #000; float:left; border-bottom:none; background:#fff;}
+.artist_pic{ padding:12px 0 40px 10px;}
+.artist_pic li .english{ padding-bottom:20px;}
+.artist_pic .english  span{ background:url("../images/line.gif") no-repeat right center; display:inline-block;}
+.artist_pic .english a{ float:left; height:30px; line-height:30px; padding:0 10px;  margin:0 3px; _margin:0 3px;  }
+.artist_pic .english a:hover{float:left; height:30px; line-height:30px; padding:0 10px;  margin:0 3px; _margin:0 3px;  background:#FF6D00; color:#fff; }
+.artist_pic .english a.cur{ float:left; height:30px; line-height:30px; padding:0 10px; background:#FF6D00; color:#fff; }
+/*艺术家*/
+ .pic_area{ clear:both;}
+ .pic_area li{ float:left; width:235px; height:235px;  position:relative;}
+.pic_area li span{ text-align:center; height:20px; line-height:20px; color:#fff; position:absolute; left:40%; bottom:10px; padding:5px; background:#000; opacity:0.7; filter:alpha(opacity=70); }
+ .pic_area li img{ width:235px; height:235px; display:block;}
+/*被浏览4个类下面标签：全部*/
+.d_label{padding-left:10px;}
+.d_label span{ background:url("../images/line.gif") no-repeat right center; display:inline-block;}
+.d_label span a{float:left; height:30px; line-height:30px; padding:0 10px;  margin:0 3px; _margin:0 3px;   }
+.d_label span a:hover{float:left; height:30px; line-height:30px; padding:0 10px;  margin:0 3px; _margin:0 3px;  background:#FF6D00; color:#fff;  }
+.d_label span a.cur{float:left; height:30px; line-height:30px; padding:0 10px;  margin:0 3px; _margin:0 3px;  background:#FF6D00; color:#fff;   }
+/*被浏览右侧推荐作品*/
+.d_recommended{ min-height:20px; _height:20px;}
+.d_recommended_title { color:#333;font-size:24px;  height:25px; line-height:25px; padding-bottom:10px;}
+.d_recommended_title span{ float:right; padding-top:9px; line-height:normal; }
+.d_recommended_title span a{color:#999;  font-size:12px;}
+.d_recommended .d_recommended_con{ clear:both; margin-bottom:20px;}
+.d_recommended_pic{ width:100%; overflow-x:hidden;}
+.d_recommended_pic ul li{ float:left; margin-bottom:2px; margin-right:1px; display:inline; position:relative;}
+.d_recommended_pic ul li img{ width:70px; height:70px; display:block;}
+.d_recommended_pic ul li span{ z-index:1; display:none; background:#ff6d00; filter:alpha(opacity=80); opacity:0.8; width:70px; height:70px; position:absolute; top:0; left:0; }
+.d_recommended_pic ul li a{ color:#fff; display:none; z-index:2; line-height:70px; text-align:center;width:70px; height:70px; position:absolute; top:0; left:0;}
+.d_recommended_pic ul li:hover span{ display:block;}
+.d_recommended_pic ul li:hover a{ display:block;}
+.basic p{ line-height:24px; height:24px; color:#444; font-size:14px;}
+/*被浏览-作品*/
+.pro_list{ padding-bottom:40px;}
+.pro_area{ background:#eee; padding:10px 8px 15px; width:210px; margin-right:6px; cursor:pointer;}
+.pro_area img{ width:210px; display:block; padding-bottom:10px;}
+.pro_text{ padding-bottom:10px;}
+.pro_text p{  line-height:20px; max-height:40px; color:#333; overflow:hidden; }
+.pro_text p.gray{ display:block; color:#666;}
+.pro_area .icon_area{ height:18px; line-height:18px; display:inline-block; border-top:1px dotted #ccc; padding-top:5px; color:#ddd;}
+.pro_area .icon_area a{ padding:0 3px; padding-left:16px; background:url(../images/cz.png) no-repeat left 5px; margin-left:3px;}
+.pro_area .icon_area a:hover{ background-position:left -22px;}
+.pro_area .icon_area a.share{ background-position:left -49px; padding-left:23px;}
+.pro_area .icon_area a.share:hover{background-position:left -76px;}
+.pro_area .icon_area a.colect{ background-position:left -102px;}
+.pro_area .icon_area a.colect:hover{ background-position:left -128px;}
+.pro_area .icon_area a.comment{ background-position:left -155px;}
+.pro_area .icon_area a.comment:hover{ background-position:left -182px;}
+.pro_area .icon_area a.delate{ background-position:left -213px;}
+.pro_area .icon_area a.delate:hover{ background-position:left -238px;}
+/*简介*/
+.intro_text{ padding:14px 5px 50px 14px; border:1px solid #ccc;}
+.intro_text p{ color:#666; line-height:24px;}
+.btn{height:60px; margin-top:50px; text-align:center; margin-bottom:20px;}
+.btn input, .increase input{ margin-right:20px; width:170px; height:60px; background:#eee; border:none; font-family:'微软雅黑'; font-size:24px; font-weight:bold; color:#666; cursor:pointer; display:inline-block;}
+.btn input.cancel{ background:#FF6D00; color:#fff;}
+/*年表*/
+.date_list{ padding-bottom:20px; height:50px;}
+.date_area{ float:left; line-height:50px; height:50px; }
+.date_area select{ padding:18px 8px 18px 14px; border:1px solid #ccc; display:inline-block;}
+.date_list span{ padding:0 5px;}
+.txt_area{padding-bottom:30px; clear:both; width:672px; }
+.add{clear:both;}
+
+.txt_area textarea{ padding:20px 14px; width:672px;}
+.txt_area span{ display:block; text-align:right;width:700px;}
+/*艺术家详细页面*/
+.about_img{ height:65px; padding-top:10px;}
+.hd_content .about_img li{width:65px; height:65px; float:left; margin-right:1px;}
+.hd_content .about_img li img{width:65px; height:65px; display:block; }
+.pl_wrapper p.profile_txt{ font-size:14px; line-height:24px; color:#434343; padding-bottom:20px;}
+.pl_wrapper span{ display:block;}
+.other_area{padding-top:18px; border-top:1px solid #ddd;}
+.other_area span{ display:block; padding-bottom:10px;}
+/*作品详情*/
+.person_area{ padding:5px 0  5px 5px; height:116px; background:#eee; }
+.person_area .person_pic{ float:left;}
+.person_area img{ width:116px; height:116px; border:1px solid #DEDEDE;}
+.person_area .person_txt{ padding-left:5px; float:left;}
+.person_area .person_txt li{ line-height:24px; font-size:14px; height:24px;}
+.person_area .person_txt li span{ color:#666; display:inline-block;}
+/*发布作品*/
+.set_content ul li select{ width:160px; font-size:14px; border:1px solid #b5b5b5; padding:15px 5px; color:#666; font-family:'微软雅黑'}
+/*艺术家——发布展览*/
+.set_title .zl_back{ float:right; font-size:14px; color:#999; padding-top:20px;}

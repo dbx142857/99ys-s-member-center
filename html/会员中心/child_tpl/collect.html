@@ -1,0 +1,220 @@
+<div class="dbx_collect_wrapper">
+	<div class="dbx_content">
+		<div class="yi_dong_zhi">移动至</div>
+		<div class="arraw_left"></div>
+		<div class="arraw_right"></div>
+		<div class="top">
+			<div class="top_inner">
+				<div class="left">
+					<input type="text" placeholder="自定义收藏">
+				</div>
+				<div class="right">
+					<select>
+						<option>option1</option>
+						<option>option2</option>
+						<option>option3</option>
+						<option>option4</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="xin_jian">新建</div>
+		<div class="qu_xiao">取消</div>
+		<div class="que_ding">确定</div>
+	</div>
+</div>
+
+<style>
+	.dbx_collect_wrapper{
+		padding:15px;
+		padding-top:30px;
+		/*border:solid 1px #ddd;*/
+		/*height:90px;*/
+		position:relative;
+	}
+	.dbx_collect_wrapper .que_ding,.dbx_collect_wrapper .qu_xiao,.dbx_collect_wrapper .xin_jian{
+		width:80px;
+		height:32px;
+		line-height:32px;
+		font-weight:bold;
+		background:#999;
+		text-align:center;
+		font-size:14px;
+		color:#666;
+		float:right;
+		margin-top:10px;
+		margin-right:15px;
+		top:55px;
+		cursor:pointer;
+		position:relative;
+		left:-24px;
+		top:00px;
+	}
+		.dbx_collect_wrapper .que_ding{
+			right:100px;
+		}
+	.dbx_collect_wrapper .que_ding:hover,.dbx_collect_wrapper .qu_xiao:hover,.dbx_collect_wrapper .xin_jian:hover{
+		color:#fff;
+		background:#ff6c02;
+	}
+	.dbx_collect_wrapper .yi_dong_zhi{
+		position:absolute;
+		right:0;
+		top:-30px;
+		font-size:12px;
+		color:#666;
+		display:none;
+	}
+	.dbx_collect_wrapper .dbx_content{
+		width:390px;
+		float:right;
+		position:relative;
+	}
+	.dbx_collect_wrapper .dbx_content .arraw_left,.dbx_collect_wrapper .dbx_content .arraw_right{
+		position:absolute;
+		top:16px;
+		width:9px;
+		height:17px;
+		cursor:pointer;
+		background-size:contain;
+	}
+	.dbx_collect_wrapper .dbx_content .arraw_left{
+		right:22px;
+		background:url(../images/tab_arraw_left_disable.png);
+	}
+	.dbx_collect_wrapper .dbx_content .arraw_right{
+		right:5px;
+		background:url(../images/tab_arraw_right_black.png);
+	}
+	.dbx_collect_wrapper .top{
+		width:350px;
+		height:50px;
+		overflow:hidden;
+	}
+	.dbx_collect_wrapper .left,.dbx_collect_wrapper .right{
+		float:left;
+		width:350px;
+	}
+	.dbx_collect_wrapper .top_inner{
+		width:700px;
+		height:50px;
+		position:relative;
+		left:0;
+	}
+	.dbx_collect_wrapper input{
+		width:345px;
+		height:46px;
+		line-height:50px;
+		padding-left:3px;
+		border:solid 1px #ddd;
+	}
+</style>
+<script>
+		function set_collect_load_event($context){
+			$context.find(".dbx_collect_wrapper").find(":text").placeholder();
+		$context.find(".dbx_collect_wrapper .arraw_right").click(function(){
+			var left=parseInt($context.find(".dbx_collect_wrapper .top_inner").css("left"));
+			if(left==0){
+				$context.find(".yi_dong_zhi").show();
+				$context.find(".dbx_collect_wrapper .arraw_left").css({
+					background:"url(../images/tab_arraw_left_black.png)"
+				})
+				$context.find(".dbx_collect_wrapper .arraw_right").css({
+					background:"url(../images/tab_arraw_right_disable.png)"
+				})
+				$context.find(".dbx_collect_wrapper .top_inner").animate({
+					left:"-350px"
+				})
+			}
+		})
+		$context.find(".dbx_collect_wrapper .arraw_left").click(function(){
+			var left=parseInt($context.find(".dbx_collect_wrapper .top_inner").css("left"));
+			if(left==-350){
+				$context.find(".yi_dong_zhi").hide();
+				$context.find(".dbx_collect_wrapper .arraw_left").css({
+					background:"url(../images/tab_arraw_left_disable.png)"
+				})
+				$context.find(".dbx_collect_wrapper .arraw_right").css({
+					background:"url(../images/tab_arraw_right_black.png)"
+				})
+				$context.find(".dbx_collect_wrapper .top_inner").animate({
+					left:"0"
+				})
+			}
+		})
+		
+		var $select=$context.find(".dbx_collect_wrapper select").hide();
+		var $div=$("<div>")
+			.appendTo($context.find(".dbx_collect_wrapper .right"))
+			.css({
+				width:"340px",
+				height:"48px",
+				paddingLeft:"4px",
+				paddingRight:"4px",
+				border:"solid 1px #ddd",
+				float:"left",
+				lineHeight:"48px",
+				color:"#999",
+				fontSize:"16px",
+				fontWeight:"bold",
+				background:"#fff url(../images/arraw_down.png) no-repeat 330px center"
+			})
+			.html("请选择")
+		var $menu=$("<div>")
+			.appendTo($("body").css("position","relative"))
+			.css({
+				width:"344px",
+				border:"solid 3px #ff6c02",
+				height:$select.children().size()*43-1>500?"500px":$select.children().size()*43-1+"px",
+				background:"#fff",
+				overflowY:$select.children().size()*43-1>500?"scroll":"hidden",
+				overflowX:"hidden"
+			});
+		$menu.dbx_set_abs_pos({
+			$obj:$context.find(".dbx_collect_wrapper .dbx_content"),
+			y_pian_yi:$div.outerHeight()
+		})
+		for(var i=0;i<$select.children().size();i++){
+			$("<div>")
+				.html("&nbsp;&nbsp;"+$select.children().eq(i).html())
+				.appendTo($menu)
+				.css({
+					width:"100%",
+					margin:"0 auto",
+					borderBottom:"solid 1px transparent",
+					height:"42px",
+					lineHeight:"42px",
+					fontSize:"16px",
+					color:"#666",
+					fontWeight:"bold",
+					cursor:"pointer"
+				})
+				.click(function(){
+					$div.html($(this).html());
+					$menu.slideUp("fast")
+				}).hover(function(){
+					$(this).css({
+						background:"#ff6c02"
+					})
+				},function(){
+					$(this).css({
+						background:"none"
+					})
+				})
+		}
+		$menu.children().last().css({
+			border:"none"
+		})
+		$div.click(function(){
+			if($menu.is(":visible")){
+				$menu.slideUp("fast");
+			}else{
+				$menu.slideDown("fast");
+			}
+		})
+		$menu.close_when_click_white({
+			$expect:$div
+		})
+		$menu.slideUp(0);
+		}
+</script>

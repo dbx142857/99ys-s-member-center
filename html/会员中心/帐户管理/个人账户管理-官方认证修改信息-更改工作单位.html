@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="../css/common2.css" rel="stylesheet" type="text/css" />
+<link href="../css/blog.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]> 
+ 	<script src="../js/iepng.js" type="text/javascript"></script>
+ <![endif]-->
+<script src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src="../js/common.js" ></script>
+<script src="../js/jquery.uploadify.js" ></script>
+<script src="../js/jquery.plugin.js" ></script>
+</head>
+
+<body>
+<!--顶部导航开始-->
+<div class="top">
+	<div class="wrap top_nav">
+    	<span><a href="#">消息<em><img src="../images/news.png" /></em></a><a href="#">私信<em><img src="../images/letter.png" /></em></a><a href="#">家巴子<i></i></a></span>
+    	<img src="../images/logo.png" />
+        <div class="fl">
+        	<a href="#">99首页</a><a href="#">新闻</a><a href="#">展览</a><a href="#">拍卖</a><a href="#">收藏</a>
+            <span><input type="text" value="请输入个人/机构名称" /><input type="button" class="s" /></span>
+        </div>
+    </div>
+</div>
+<!--顶部导航结束-->
+<div class="wrap content">
+	<!--左侧开始-->
+	<div class="left">
+    	<div class="aside">
+        	<ul>
+            	<li><a href="个人账户管理-基本信息.html"><span>&gt;</span>基本信息</a></li>
+				<li><a href="个人账户管理-更改密码.html"><span>&gt;</span>更改密码</a></li>
+				<li><a href="个人账户管理-消息设置.html"><span>&gt;</span>消息设置</a></li>
+				<li><a href="个人账户管理-我的订阅.html"><span>&gt;</span>我的订阅</a></li>
+				<li><a href="#" class="hov"><span>&gt;</span>官方认证</a></li>
+                <li><a href="#"><span>&gt;</span>我的积分</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--左侧结束-->
+    <div class="right">
+        <div class="set_title"><img src="../images/set_05.png" /></div>
+        <div class="approve">
+        	<div class="jg_name">芳草艺术画廊中心</div>
+            <div class="jg_name">CEO</div>
+            <ul>
+            	<li><span>修改理由：</span><select name="">
+            		<option>请选择</option>
+            		<option>更新本单位职务信息</option>
+            		<option>变更工作单位</option>
+            	</select></li>
+                <li><span>新认证说明：</span><textarea name="" cols="" rows="" width="420"></textarea><br/></li>
+                <li><span>职位：</span><input type="text" value="" /></li>
+                <li><span>职位证明：</span></li>
+                <li class="an"><input class="cs" type="button" value="取　消" /><input type="button" value="确认提交" /></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--底部开始-->
+<div class="footer">
+	<div class="footer_nav"><a href="#">设为首页</a>|<a href="#">关于我们</a>|<a href="#">99大事记</a>|<a href="#">合作伙伴</a>|<a href="#">招聘信息</a>|<a href="#">网站地图</a>|<a href="#">友情链接</a>|<a href="#">艺术导航</a>|<a href="#">提建议</a></div>
+    <div class="copy">
+    	新闻热线：010-51374003-809/816/808　主编信箱<br/>
+        Email：xinwen@99ys.com　<br/>
+		媒介QQ：1484571929　 　 地址：北京市朝阳区酒仙桥路2号798艺术区01商务楼401室　邮编：100015 <br/>
+		网络文化经营许可证号：京网文[2013]0344-083号　京ICP备09023634号<br/>
+		版权所有： Copyright 2004-2013 北京久久弋曙科技有限责任公司 <br/>
+		常年法律顾问：<a href="#"><img src="../images/lv.jpg" /></a></div>
+</div>
+<!--底部结束-->
+</body>
+</html>
+<script>
+	$(function(){
+		// $("select").each(function(){
+			// var $select=$(this).replace_with_div({
+						// height:22,
+						// arrow_down_bg:"url(../images/arraw_down.png)"
+					// }).css({
+						// marginTop:"15px"
+					// })
+					// $select.find(".dbx_select_title").add($select.find(".dbx_select_title").parent()).css({
+						// width:"228px"
+					// })
+		// })
+		$("select").each(function(){
+			var $select=$(this).replace_with_div({
+						height:22,
+						arrow_down_bg:"url(../images/arraw_down.png)",
+						on_expand:function(){
+							$select.find(".dbx_select_title").css({
+								borderBottomWidth:"0"
+							})
+						}
+					}).css({
+						marginTop:"15px"
+					})
+					$select.find(".dbx_select_title").add($select.find(".dbx_select_title").parent()).css({
+						width:"228px"
+					})
+		})
+		$(".cs").addClass("reset");
+		
+		// $("textarea").form_check({
+			// max:500,
+			// gt_max:"字数不能超过500",
+			// null_value:"请输入认证说明"
+		// });
+		//职位
+		$(":text").last().form_check({
+			null_value:"请输入职位名称",
+			max:60,
+			gt_max:"职位名称过长(最多60个字符)",
+			reg:/^[A-Za-z0-9_\-\u4e00-\u9fa5]+$/,
+			format_error:"格式错误（只允许字母数字下划线汉字）"
+		});
+		
+		//提交按钮点击
+	$(".an").children().last().click(function(){
+		$("textarea,:text").blur();
+		if($(".dbx_input_error").filter(":visible").size()>0){
+			return false;
+		}else{
+			//执行ajax或者提交表单等操作
+			
+		}
+	})
+	
+	//上传图片
+	var $up_li=$("span:contains(职位证明)").parent();
+	$up_li.next().css({
+		marginTop:"90px"
+	})
+	var $span=$("<span style='width:140px;'></span>").appendTo($up_li);
+	var $input=$("<input type='file' id='dbx_file_input'/>")
+		.appendTo($span);
+	$("<style>.uploadify-queue{width:0;height:0;overflow:hidden;}</style>").appendTo($("body"));
+		var $loading;
+		$("#dbx_file_input").uploadify({
+            'swf':config.upload_swf_path,
+            'multi':true,
+            "fileSizeLimit":"2MB",
+            "width":"140",
+            "height":"50",
+            // "fileTypeExts":["*.jpg","*.png"],
+            'buttonText':'上&nbsp;&nbsp;传',
+            'uploader' :config.upload_php_url,
+            "onSelect":function(){
+            	$loading=$("#dbx_file_input").loading_img_before_request({
+            		src:config.loading_img_path,
+            		bg_opacity:"1"
+            	})
+            },
+           'onQueueComplete':function(e){
+				$loading.remove();
+			},
+			'onUploadSuccess':function(file,data,response){
+				if(data.indexOf("类型不合法")!=-1){
+					alert(data);
+				}else{
+					var img=new Image();
+					var src;
+					var name;
+					img.onload=function(){
+						if($("#dbx_upload_pic").size()>0){
+							$("#dbx_upload_pic").remove();
+						}
+						if($("#dbx_upload_pic_info").size()>0){
+							$("#dbx_upload_pic_info").remove();
+						}
+						var w=this.width,
+							h=this.height;
+						if(w>200){
+							w=200
+						}
+						if(h>200){
+							h=200
+						}
+						var $img=$("<img>")
+							.appendTo($("body"))
+							.css({
+								display:"block",
+								zIndex:"999",
+								width:w+"px",
+								height:h+"px"
+							})
+							.hide()
+							.attr({
+								src:src,
+								id:"dbx_upload_pic"
+							});
+							$img.dbx_set_abs_pos({
+								$obj:$dbx_file_input,
+					       		x_pian_yi:160,
+					       		y_pian_yi:60
+							})
+							
+						var $s=$("<span>")
+						.html(name+"&nbsp;&nbsp;<a href='javascript:;'>删除</a>")
+						.css({
+							fontSize:"12px",
+							color:"#ff6d00"
+						})
+						.attr({
+							id:"dbx_upload_pic_info"
+						})
+						.hover(function(){
+							$img.show();
+						},function(){
+							$img.hide();
+						})
+						.appendTo($("body"));
+						$s.dbx_set_abs_pos({
+					       		$obj:$dbx_file_input,
+					       		x_pian_yi:160,
+					       		y_pian_yi:35
+					       	})
+					$s.find("a")
+					.css({
+						color:"#ff6d00"
+					})
+					.hover(function(){
+						$(this).css("text-decoration","underline");
+					},function(){
+						$(this).css("text-decoration","none");
+					})
+					.click(function(){
+						$img.slideUp("fast",function(){
+							$img.remove();
+							$s.remove();
+						})
+					})
+					
+					
+					}
+					src=data.split("/");
+					name=src[src.length-1];
+					src="http://localhost/uploads/"+name;
+					img.src=src;
+				}
+			}
+        });	
+        var $dbx_file_input=$("#dbx_file_input").css({
+        	background:"#EEEBEB"
+        });
+        $(".uploadify-button-text")
+        	.css({
+	        	fontSize:"24px",
+	        	fontFamily:"微软雅黑",
+	        	fontWeight:"bolder",
+	        	textAlign:"center",
+	        	width:"140px",
+	        	color:"#666"
+	        })
+        $("#SWFUpload_0")
+	        .dbx_set_abs_pos({
+	        	$obj:$dbx_file_input
+	        })
+    $("<span>")
+       	.html("名片，工牌，盖章，工作证明等。<a href=''>下载工作证明模板</a>")
+       	.appendTo($("body").css("position","relative"))
+       	.css({
+       		color:"#999"
+       	})
+       	.dbx_set_abs_pos({
+       		$obj:$dbx_file_input,
+       		x_pian_yi:160,
+       		y_pian_yi:15
+       	})
+       	
+       	
+       	//文本域字数限制
+      var $textarea=$("textarea");
+      $("<label style='line-height:12px;float:right;margin-right:56px;color:#999;'>0/2000</label>")
+      	.insertAfter($textarea);
+      $textarea.textarea_words_limit({
+		$words_msg_ti_shi_obj:(function(){
+			var html=$textarea.next().html();
+			var limit=parseInt(html.substring(html.indexOf("/")+1));
+			return $textarea.next().html("<label>0</label>/<label>"+limit+"</label>").find("label").first()
+		})(),
+		words_num_limit:parseInt($textarea.next().find("label").last().html()),
+		num_ti_shi_only:true
+	})	
+	//文本域验证
+	var str=$textarea.prev().html().substring(0,5);
+	$textarea.form_check({
+		null_value:"请输入"+str,
+		max:function(){
+			return $textarea.next().text()
+		},
+		gt_max:str+"过长(最多2000个字符)"
+	})
+	
+	$(".uploadify-button-text").css({
+		lineHeight:"50px"
+	})
+	
+	})
+</script>

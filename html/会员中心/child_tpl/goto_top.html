@@ -1,0 +1,47 @@
+	<a href="" class="climbBtn">
+	</a>
+	<a href="" class="climbRun" style="visibility: visible;">
+		<span class="climbActive" style="display: none;">
+			<img src="http://news.99ys.com/statics/news/img/climb.png" alt="">
+		</span>
+	</a>
+<style>
+.climb {
+	left:1240px;
+	bottom:150px;
+width: 55px;
+height: 111px;
+position: fixed;
+bottom: 150px;
+z-index: 999;
+}
+	.climb .climbBtn {
+float: left;
+height: 55px;
+width: 55px;
+background: url(../images/climbBg.png) left -56px no-repeat;
+position: relative;
+top: 0px;
+left: 0px;
+}
+.climb .climbBtn:hover{
+	background-position:left -166px;
+}
+.climb .climbRun {
+float: left;
+height: 55px;
+width: 55px;
+margin-top: 1px;
+background: url(../images/climbBg.png) left top no-repeat;
+visibility: hidden;
+position:relative;
+}
+.climb .climbRun:hover{
+	background-position:left -112px;
+}
+.climb .climbRun span{
+	position:absolute;
+	top:0;
+	left:-250px;
+}
+</style>

@@ -1,0 +1,202 @@
+<div class="pl_wrapper">
+	<i></i>
+	<div class="pinglun">
+		<textarea>@123</textarea>
+		<div class="publish_div">
+        	<span class="publish"><input type="button" value="发 布" /></span>
+        	<span><a class="qqface" href="javascript:;"></a></span>
+			<span><input type="checkbox" /></span>
+			<span>同步至</span>
+		</div>
+        <div class="sum">共99条</div>
+		<div class="list">
+			<ul>
+				<li>
+                	<div class="icon" style="background:url(../images/pl_list_li_icon.png) no-repeat center;"></div>
+					<div class="dbx_content">
+                    	<p><span class="name">sdfsdfsdf&nbsp;:&nbsp;</span>床前明月光，疑是地上霜床前明月光，疑是地上霜疑是地上霜床前明月光，疑是地上霜疑是地上霜床前明月光，疑是地上霜</p>
+                    	<div class="funs"><a class="fav" href="javascript:;">(99)</a><a class="hf" href="javascript:;">(99)</a><a class="del" href="javascript:;"></a></div>
+                        <div style="display:none;" class="pl_wrapper pl_wrapper2">
+                        	<i></i>
+                            <div class="pinglun">
+                            	<textarea>@123</textarea>
+                                <div class="publish_div">
+                                    <span class="publish"><input type="button" value="发 布" /></span>
+                                    <span><a class="qqface" href="javascript:;"></a></span>
+                                    <span><input type="checkbox" /></span>
+                                    <span>同步至</span>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                    <div class="clear"></div>
+				</li>
+                <li>
+                	<div class="icon" style="background:url(../images/pl_list_li_icon.png) no-repeat center;"></div>
+					<div class="dbx_content">
+                    	<p><span class="name">sdfsdfsdf&nbsp;:&nbsp;</span>床前明月光，疑是地上霜床前明月光，疑是地上霜疑是地上霜床前明月光，疑是地上霜疑是地上霜床前明月光，疑是地上霜</p>
+                    	<div class="funs"><a class="fav" href="javascript:;">(99)</a><a class="hf" href="javascript:;">(99)</a><a class="del" href="javascript:;"></a></div>
+						<div style="display:none;" class="pl_wrapper pl_wrapper2">
+                        	<i></i>
+                            <div class="pinglun">
+                            	<textarea>@123</textarea>
+                                <div class="publish_div">
+                                    <span class="publish"><input type="button" value="发 布" /></span>
+                                    <span><a class="qqface" href="javascript:;"></a></span>
+                                    <span><input type="checkbox" /></span>
+                                    <span>同步至</span>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                    <div class="clear"></div>
+				</li>
+			</ul>
+		</div>
+        <div class="more">后面还有9771条评论，<a href="#">点击查看>></a></div>
+	</div>
+</div>
+<script>
+
+function load_pl_list_script($context){
+	$context.delegate(".fav","click",function(){
+		var $thi=$(this);
+		//是否已经收藏
+		
+		
+		
+		
+		if(!$thi.attr("allow_fav")){
+								$thi.attr("allow_fav","1");
+							}
+							var ti_shi=function(bg){
+								var $div=$("<div>")
+											.appendTo($("body"))
+											.css({
+												width:"51px",
+												height:"40px",
+												background:bg,
+												marginTop:"0"
+											})
+											$div.dbx_set_abs_pos({
+												$obj:$thi,
+												x_pian_yi:0
+											});
+										$div.animate({
+											marginTop:-$thi.height()-20+"px",
+											opacity:"0.5"
+										},1000,function(){
+											$div.remove();
+										})
+							}
+							$.ajax({
+								success:function(){
+									if($thi.attr("allow_fav")=="1"){
+										// $thi.css({
+											// backgroundPosition:"0 -22px",
+											// color:"#ff6d00"
+										// })
+										var txt=$thi.text();
+										txt=txt.substring(1,txt.length-1);
+										txt=parseInt(txt,10)+1;
+										$thi.html("("+txt+")");
+										$thi.attr("allow_fav","0");
+										ti_shi("url("+config.img_path+"heart.png) 0 -40px");
+									}else{
+										// $thi.css({
+											// backgroundPosition:"0 0",
+											// color:"#333"
+										// })
+										var txt=$thi.text();
+										txt=txt.substring(1,txt.length-1);
+										txt=parseInt(txt,10)-1;
+										$thi.html("("+txt+")");
+										$thi.attr("allow_fav","1");
+										ti_shi("url("+config.img_path+"heart.png) 0 -0px");
+									}
+								}
+							})
+							// if(!$thi.attr("allow_fav")){
+								// $thi.attr("allow_fav","1");
+							// }
+							// var ti_shi=function(txt){
+								// var $div=$("<div>")
+											// .appendTo($("body"))
+											// .css({
+												// width:"120px",
+												// height:$thi.height()+"px",
+												// lineHeight:$thi.height()+"px",
+												// textAlign:"center",
+												// fontSize:"16px",
+												// color:"#fff",
+												// background:"#FF6D00",
+												// marginTop:"0"
+											// })
+											// .html(txt);
+											// $div.dbx_set_abs_pos({
+												// $obj:$thi,
+												// x_pian_yi:-60
+											// });
+										// $div.animate({
+											// marginTop:-$thi.height()+"px",
+											// opacity:"0"
+										// },1000)
+							// }
+							// $.ajax({
+								// success:function(){
+									// if($thi.attr("allow_fav")=="1"){
+										// // $thi.css({
+											// // backgroundPosition:"0 -22px",
+											// // color:"#ff6d00"
+										// // })
+										// var txt=$thi.text();
+										// txt=txt.substring(1,txt.length-1);
+										// txt=parseInt(txt,10)+1;
+										// $thi.html("("+txt+")");
+										// $thi.attr("allow_fav","0");
+										// ti_shi("收藏成功");
+									// }else{
+										// // $thi.css({
+											// // backgroundPosition:"0 0",
+											// // color:"#333"
+										// // })
+										// var txt=$thi.text();
+										// txt=txt.substring(1,txt.length-1);
+										// txt=parseInt(txt,10)-1;
+										// $thi.html("("+txt+")");
+										// $thi.attr("allow_fav","1");
+										// ti_shi("取消成功");
+									// }
+								// }
+							// })
+	})
+	var $a=$context;
+	// var $pl_wrapper2=$a.find(".pl_wrapper2");
+		//删除评论
+		$a.delegate(".del","click",function(){
+			var $thi=$(this);
+			$.ajax({
+				type:"post",
+				url:"../../php/ajax_test.php",
+				success:function(e){
+					if(1==1){
+						var $li=$thi.closest("li");
+						$li.slideUp("fast",function(){
+							$li.remove();
+						});
+					}
+				}
+			})
+		})
+		//字评论
+		.delegate(".hf","click",function(){
+			var $thi=$(this);
+			var $obj=$thi.closest(".dbx_content").find(".pl_wrapper2");
+			if($obj.is(":visible")){
+				$obj.hide();
+			}else{
+				$obj.show();
+			}
+		})
+}
+</script>
